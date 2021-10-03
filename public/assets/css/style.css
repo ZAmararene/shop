@@ -42,3 +42,8 @@ body {
 .product-page-price {
   font-size: 19px;
 }
+
+.cart-icon {
+  height: 25px;
+  padding-left: 15px;
+}
