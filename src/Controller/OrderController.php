@@ -53,6 +53,7 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $date = new \DateTimeImmutable();
             $carriers = $form->get('carriers')->getData();
             $delivry = $form->get('addresses')->getData();
             $delivry_content = $delivry->getFirstname() . ' ' . $delivry->getLastname();
@@ -68,8 +69,10 @@ class OrderController extends AbstractController
 
             // enregistrer ma commande Order()
             $order = new Order();
+            $reference = $date->format('dmY') . '-' . uniqid();
+            $order->setReference($reference);
             $order->setUser($this->getUser());
-            $order->setCreatedAt(new \DateTimeImmutable());
+            $order->setCreatedAt($date);
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
             $order->setDelivry($delivry_content);
@@ -94,7 +97,8 @@ class OrderController extends AbstractController
             return $this->render('order/add.html.twig', [
                 'cart' => $cart->getFull(),
                 'carrier' => $carriers,
-                'delivry' => $delivry_content
+                'delivry' => $delivry_content,
+                'reference' => $order->getReference()
             ]);
         }
 
