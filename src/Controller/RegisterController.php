@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classe\Mail;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,6 +36,17 @@ class RegisterController extends AbstractController
 
             $this->entityManager->persist($user);
             $this->entityManager->flush();
+
+            $mail = new Mail();
+            $content = "Tout d'abord, bienvenue à La Boutique Française. Nous sommes heureux de vous compter parmi nos clients et nous vous remercions vivement de votre confiance. <br /> MERCI";
+            $mail->send($user->getEmail(), $user->getFullName(), "CONFIRMATION D'INSCRIPTION", $content);
+
+            $this->addFlash(
+                'notice',
+                'Votre ête bien inscrit sur notre site, vous pouvez dès à présent vous connecter à votre compte'
+            );
+
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('register/register.html.twig', [
