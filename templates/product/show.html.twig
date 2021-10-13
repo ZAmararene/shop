@@ -5,13 +5,12 @@
 {% endblock %}
 
 {% block body %}
-
 	<div class="row">
 		<div class="col-5">
 			<img src="/uploads/{{ product.illustration }}" alt="" , class="img-fluid">
 		</div>
 		<div class="col-7 my-auto">
-			<h1 class="my-5">
+			<h1 class="my-4">
 				{{ product.name}}
 			</h1>
 			<p>{{ product.subtitle }}</p>
@@ -22,8 +21,19 @@
 			<hr>
 			<p>{{ product.description }}</p>
 			<a href="{{ path("cart_add", {'id' : product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
-
-
 		</div>
+	</div>
+
+	<hr>
+
+	<h3 class="my-4">Nos meilleurs ventes</h3>
+	<p>Découvrez les articles les plus vendus.</p>
+	<div class="row">
+		{% for product in products %}
+			<div class="col-3">
+				{% include "product/single_product.html.twig" %}
+			</div>
+
+		{% endfor %}
 	</div>
 {% endblock %}

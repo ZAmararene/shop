@@ -40,6 +40,7 @@ class ProductController extends AbstractController
      */
     public function show($slug, ProductRepository $productRepository)
     {
+        $products = $productRepository->findByIsBest(1);
         $product = $productRepository->findOneBySlug($slug);
 
         if (!$product) {
@@ -47,7 +48,8 @@ class ProductController extends AbstractController
         }
 
         return $this->render('product/show.html.twig', [
-            'product' => $product
+            'product' => $product,
+            'products' => $products
         ]);
     }
 }

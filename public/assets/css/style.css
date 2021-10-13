@@ -63,3 +63,8 @@ body {
   padding: 20px;
   margin-top: 25px;
 }
+
+.content-header .page-actions .action-updateDelivry {
+  display: inline-block;
+  margin-right: 30px !important;
+}
