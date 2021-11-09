@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md fixed-top">
+	<a class="navbar-brand pr-5" href="{{ path('homepage') }}">La Boutique Française</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('products') }}">Nos produits</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+			</li>
+		</ul>
+		<div class="navbar-item-cusom">
+			{% if app.user %}
+				<img src="{{ asset('assets/image/account.png') }}" class="cart-icon" alt="">
+				<a href="{{ path('account') }}" class="mr-3">
+					Mon compte
+				</a>
+
+				<img src="{{ asset('assets/image/logout.png') }}" class="cart-icon" alt="">
+				<a href="{{ path('app_logout') }}" class="mr-3">
+					Déconnexion
+				</a>
+			{% else %}
+				<a href="{{ path('app_login') }}" class="mr-3">
+					Connexion
+				</a>
+				<a href="{{ path('register') }}" class="mr-3">
+					Inscription
+				</a>
+			{% endif %}
+		</div>
+		<a href="{{ path('cart') }}" class="border border-dark p-1">
+			<img src="{{ asset('assets/image/shopping.png') }}" class="cart-icon" alt="">
+			Panier
+		</a>
+	</div>
+</nav>

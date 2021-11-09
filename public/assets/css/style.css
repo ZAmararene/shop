@@ -1,5 +1,60 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media(min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
 body {
-  position: relative;
+  padding-bottom: 0 !important;
+}
+
+body div{
+  color: #000 !important;
+}
+
+.btn {
+  background-color: #A7A37E !important;
+  border : #A7A37E !important;
+  border-radius: 0% !important;
+}
+
+nav {
+  background-color: #F7F7F0 !important;
+}
+
+nav .navbar-brand{
+  color: #002F2F;
+  font-size: 20px;
+}
+
+nav .navbar-collapse a{
+  color: #000;
+}
+
+nav a:hover {
+  color: #A7A37E;
+}
+
+footer {
+  background-color: #FBF9F5 !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.img-card {
+  width: 200px;
+  height: 200px !important;
 }
 
 .navbar-item-cusom a {
@@ -17,6 +72,7 @@ body {
 .product-container {
   margin-bottom: 150px;
 }
+
 .product-item {
   margin-top: 50px;
 }
@@ -44,14 +100,14 @@ body {
 }
 
 .cart-icon {
-  height: 25px;
-  padding-left: 15px;
+  height: 20px;
+  margin-bottom: 4px;
+  color: #000;
 }
 
 .form-check {
-  background-color: #f4f8ff;
-  padding: 20px 65px;
-  margin-top: 10px;
+  margin-left: 15px;
+
 }
 
 .col-form-label {
@@ -67,4 +123,67 @@ body {
 .content-header .page-actions .action-updateDelivry {
   display: inline-block;
   margin-right: 30px !important;
+}
+
+.account-item {
+  background-color: #F1F2F6;
+  padding: 70px;
+}
+
+.account-item a {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0abde3;
+}
+
+.account-item a:hover {
+  color: #576574;
+  text-decoration: none;
+}
+
+.account-item p {
+  color : #5f27cd;
+}
+
+#myCarousel .carousel-item {
+  width: 100%;
+  height: 440px;
+  background-size: cover !important;
+}
+
+.carousel div {
+  color: #FFF !important;
+}
+
+.contact i {
+  color: #A7A37E;
+}
+
+.account i {
+  color: #002F2F;
+}
+
+.account a {
+  color: #A7A37E;
+}
+
+.admin a {
+  color: #002F2F;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.admin p a:hover {
+  color: #B9121B!important;
+}
+
+.admin i {
+  color: #A7A37E;
+}
+
+.product-detail {
+  display: inline-block;
+  width: 100%;
+  height: 450px !important;
 }

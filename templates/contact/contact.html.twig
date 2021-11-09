@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter
+{% endblock %}
+
+{% block body %}
+	<h1 class="my-5">Nous contacter</h1>
+	<p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais</p>
+
+	{% for message in app.flashes('notice') %}
+		<div class="alert alert-info">
+			{{ message }}
+		</div>
+	{% endfor %}
+	<div class="row">
+		<div class="col-8">
+			{{ form(form) }}
+			</div>
+			<div class="col contact">
+				<strong>La Boutique Française</strong>
+
+				<hr>
+
+				<p>
+					<i class="fas fa-map-marker-alt mr-2"></i>
+					<span class="text-auto">6 rue du Paradis, 75010 Paris</span>
+				</p>
+				<p>
+					<i class="fas fa-mobile-alt mr-2"></i>
+					06 06 06 06 06
+				</p>
+				<p>
+					<i class="fas fa-at mr-2"></i>
+					contact@laboutiquefrancaise.fr
+				</p>
+			</div>
+		</div>
+	{% endblock %}

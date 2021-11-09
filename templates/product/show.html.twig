@@ -6,11 +6,11 @@
 
 {% block body %}
 	<div class="row">
-		<div class="col-5">
-			<img src="/uploads/{{ product.illustration }}" alt="" , class="img-fluid">
+		<div class="col-5 mt-5">
+			<img src="/uploads/{{ product.illustration }}" alt="" , class="img-fluid product-detail">
 		</div>
 		<div class="col-7 my-auto">
-			<h1 class="my-4">
+			<h1 class="my-1">
 				{{ product.name}}
 			</h1>
 			<p>{{ product.subtitle }}</p>
@@ -33,7 +33,6 @@
 			<div class="col-3">
 				{% include "product/single_product.html.twig" %}
 			</div>
-
 		{% endfor %}
 	</div>
 {% endblock %}

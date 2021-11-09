@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Page introuvable
+{% endblock %}
+
+{% block body %}
+	<div class="row text-center mt-3">
+		<div class="col">
+			<img src="{{ asset('/assets/image/oops.jpg') }}" class="img-fluid" alt="">
+		</div>
+		<div class="col my-auto">
+			<h1>Cette page ne fonctionne pas</h1>
+			<p>La page que vous recherchez semble introuvable.</p>
+			<a href="{{ path('homepage') }}" class="btn btn-info">Revenir à l'accueil</a>
+		</div>
+	</div>
+{% endblock %}

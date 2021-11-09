@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte
+{% block title %}
+	Mon compte
 {% endblock %}
 
 {% block body %}
@@ -13,21 +14,52 @@
 		<br/>
 		C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
 	</p>
+
 	<hr>
-	<div>
-		<p>
-			<a href="{{ path('change_password') }}">
-				Modifier mon mot de passe
-			</a>
-		</p>
-		<a href="{{ path('account_address') }}">
-			<p>Ajouter mes adresses</p>
-		</a>
-		<p>
-			<a href="{{ path('account_orders') }}">
-				Mes commandes
-			</a>
-		</p>
+
+	<div class="admin">
+		{% if is_granted('ROLE_ADMIN') %}
+			<p class="text-center my-5">
+				<a href="/admin" target="_blank" class="border p-3 text-dark">
+					<i class="fas fa-hand-point-right mr-2"></i>
+					Backoffice réservé à l'administrateur
+				</a>
+			</p>
+		{% endif %}
 	</div>
-	<hr>
+
+	<div class="row account">
+		<div class="col-4">
+			<div class="account-item text-center">
+				<p>
+					<i class="fas fa-lock fa-3x"></i>
+				</p>
+				<a href="{{ path('change_password') }}">
+					Modifier mon mot de passe
+				</a>
+
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="account-item text-center">
+				<p>
+					<i class="fas fa-address-card fa-3x"></i>
+				</p>
+				<a href="{{ path('account_address') }}">
+					Ajouter mes adresses
+				</a>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="account-item text-center">
+				<p>
+					<i class="fas fa-shopping-bag fa-3x"></i>
+				</p>
+				<a href="{{ path('account_orders') }}">
+					Mes commandes
+				</a>
+
+			</div>
+		</div>
+	</div>
 {% endblock %}

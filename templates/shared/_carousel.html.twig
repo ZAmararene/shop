@@ -6,13 +6,13 @@
 	</ol>
 	<div class="carousel-inner">
 		{% for key,header in headers %}
-			<div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{header.illustration}}'); background-size: cover; widht=100%; height=100%">
+			<div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{header.illustration}}')">
 				<div class="container">
 					<div class="carousel-caption text-left">
 						<h1>{{ header.title }}</h1>
 						<p>{{ header.content }}</p>
 						<p>
-							<a class="btn btn-lg btn-info" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
+							<a class="btn btn-m" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
 						</p>
 					</div>
 				</div>
